@@ -1,184 +1,250 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
   <defs>
-    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
-      <stop offset="0%" style="stop-color:#0a1628"/>
-      <stop offset="100%" style="stop-color:#020810"/>
+    <radialGradient id="bg" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" style="stop-color:#0f1f3d"/>
+      <stop offset="60%" style="stop-color:#060e1f"/>
+      <stop offset="100%" style="stop-color:#020509"/>
     </radialGradient>
-    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" style="stop-color:#00f5ff;stop-opacity:0.3"/>
-      <stop offset="100%" style="stop-color:#00f5ff;stop-opacity:0"/>
+    <radialGradient id="centerGlow" cx="50%" cy="42%" r="35%">
+      <stop offset="0%" style="stop-color:#00e5ff;stop-opacity:0.18"/>
+      <stop offset="50%" style="stop-color:#7b2fff;stop-opacity:0.06"/>
+      <stop offset="100%" style="stop-color:#000;stop-opacity:0"/>
     </radialGradient>
-    <linearGradient id="spiderBody" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#00d4ff"/>
-      <stop offset="50%" style="stop-color:#7b2fff"/>
-      <stop offset="100%" style="stop-color:#ff006e"/>
+    <radialGradient id="spiderGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#00e5ff;stop-opacity:0.5"/>
+      <stop offset="100%" style="stop-color:#00e5ff;stop-opacity:0"/>
+    </radialGradient>
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00e5ff"/>
+      <stop offset="40%" style="stop-color:#6c3fff"/>
+      <stop offset="100%" style="stop-color:#ff2d78"/>
     </linearGradient>
-    <linearGradient id="legGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#00f5ff"/>
-      <stop offset="100%" style="stop-color:#00f5ff;stop-opacity:0.2"/>
+    <linearGradient id="legR" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00e5ff"/>
+      <stop offset="60%" style="stop-color:#00e5ff;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#00e5ff;stop-opacity:0.05"/>
     </linearGradient>
-    <linearGradient id="legGradR" x1="100%" y1="0%" x2="0%" y2="0%">
-      <stop offset="0%" style="stop-color:#00f5ff"/>
-      <stop offset="100%" style="stop-color:#00f5ff;stop-opacity:0.2"/>
+    <linearGradient id="legL" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#00e5ff"/>
+      <stop offset="60%" style="stop-color:#00e5ff;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#00e5ff;stop-opacity:0.05"/>
     </linearGradient>
-    <filter id="neonGlow">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00e5ff"/>
+      <stop offset="50%" style="stop-color:#ffffff"/>
+      <stop offset="100%" style="stop-color:#ff2d78"/>
+    </linearGradient>
+    <filter id="glow3">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feComposite in="SourceGraphic" in2="b" operator="over"/>
     </filter>
-    <filter id="softGlow">
-      <feGaussianBlur stdDeviation="8" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    <filter id="glow6">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feComposite in="SourceGraphic" in2="b" operator="over"/>
     </filter>
-    <filter id="bigGlow">
-      <feGaussianBlur stdDeviation="20"/>
+    <filter id="glow12">
+      <feGaussianBlur stdDeviation="12" result="b"/>
+      <feComposite in="SourceGraphic" in2="b" operator="over"/>
     </filter>
+    <filter id="blur30">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+    <filter id="blur50">
+      <feGaussianBlur stdDeviation="50"/>
+    </filter>
+    <clipPath id="roundClip">
+      <rect width="1200" height="630" rx="0"/>
+    </clipPath>
   </defs>
 
-  <!-- Background -->
+  <g clip-path="url(#roundClip)">
+  <!-- Deep space background -->
   <rect width="1200" height="630" fill="url(#bg)"/>
 
-  <!-- Grid lines -->
-  <g opacity="0.08" stroke="#00f5ff">
-    <line x1="0" y1="105" x2="1200" y2="105"/>
-    <line x1="0" y1="210" x2="1200" y2="210"/>
-    <line x1="0" y1="315" x2="1200" y2="315"/>
-    <line x1="0" y1="420" x2="1200" y2="420"/>
-    <line x1="0" y1="525" x2="1200" y2="525"/>
-    <line x1="200" y1="0" x2="200" y2="630"/>
-    <line x1="400" y1="0" x2="400" y2="630"/>
-    <line x1="600" y1="0" x2="600" y2="630"/>
-    <line x1="800" y1="0" x2="800" y2="630"/>
-    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  <!-- Subtle grid -->
+  <g opacity="0.04" stroke="#00e5ff" stroke-width="0.5">
+    <line x1="0" y1="63" x2="1200" y2="63"/><line x1="0" y1="126" x2="1200" y2="126"/>
+    <line x1="0" y1="189" x2="1200" y2="189"/><line x1="0" y1="252" x2="1200" y2="252"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/><line x1="0" y1="378" x2="1200" y2="378"/>
+    <line x1="0" y1="441" x2="1200" y2="441"/><line x1="0" y1="504" x2="1200" y2="504"/>
+    <line x1="0" y1="567" x2="1200" y2="567"/>
+    <line x1="120" y1="0" x2="120" y2="630"/><line x1="240" y1="0" x2="240" y2="630"/>
+    <line x1="360" y1="0" x2="360" y2="630"/><line x1="480" y1="0" x2="480" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/><line x1="720" y1="0" x2="720" y2="630"/>
+    <line x1="840" y1="0" x2="840" y2="630"/><line x1="960" y1="0" x2="960" y2="630"/>
+    <line x1="1080" y1="0" x2="1080" y2="630"/>
   </g>
 
-  <!-- Hexagonal web pattern behind spider -->
-  <g transform="translate(600,280)" opacity="0.12" stroke="#00f5ff" fill="none" stroke-width="1">
-    <polygon points="0,-120 104,-60 104,60 0,120 -104,60 -104,-60"/>
-    <polygon points="0,-180 156,-90 156,90 0,180 -156,90 -156,-90"/>
-    <polygon points="0,-240 208,-120 208,120 0,240 -208,120 -208,-120"/>
+  <!-- Large center glow -->
+  <ellipse cx="600" cy="260" rx="350" ry="250" fill="url(#centerGlow)" filter="url(#blur50)"/>
+
+  <!-- Concentric hexagonal webs -->
+  <g transform="translate(600,260)" stroke="#00e5ff" fill="none">
+    <polygon points="0,-80 69,-40 69,40 0,80 -69,40 -69,-40" stroke-width="1" opacity="0.2"/>
+    <polygon points="0,-130 113,-65 113,65 0,130 -113,65 -113,-65" stroke-width="0.8" opacity="0.14"/>
+    <polygon points="0,-185 160,-92 160,92 0,185 -160,92 -160,-92" stroke-width="0.6" opacity="0.1"/>
+    <polygon points="0,-240 208,-120 208,120 0,240 -208,120 -208,-120" stroke-width="0.5" opacity="0.07"/>
+    <polygon points="0,-295 255,-148 255,148 0,295 -255,148 -255,-148" stroke-width="0.4" opacity="0.04"/>
   </g>
 
-  <!-- Radial web lines -->
-  <g transform="translate(600,280)" opacity="0.15" stroke="#00f5ff" stroke-width="0.8">
-    <line x1="0" y1="0" x2="0" y2="-300"/>
-    <line x1="0" y1="0" x2="260" y2="-150"/>
-    <line x1="0" y1="0" x2="260" y2="150"/>
-    <line x1="0" y1="0" x2="0" y2="300"/>
-    <line x1="0" y1="0" x2="-260" y2="150"/>
-    <line x1="0" y1="0" x2="-260" y2="-150"/>
-    <line x1="0" y1="0" x2="150" y2="-260"/>
-    <line x1="0" y1="0" x2="150" y2="260"/>
-    <line x1="0" y1="0" x2="-150" y2="-260"/>
-    <line x1="0" y1="0" x2="-150" y2="260"/>
-    <line x1="0" y1="0" x2="300" y2="0"/>
-    <line x1="0" y1="0" x2="-300" y2="0"/>
+  <!-- Radial web spokes -->
+  <g transform="translate(600,260)" opacity="0.1" stroke="#00e5ff" stroke-width="0.6">
+    <line x1="0" y1="0" x2="0" y2="-310"/>
+    <line x1="0" y1="0" x2="268" y2="-155"/>
+    <line x1="0" y1="0" x2="268" y2="155"/>
+    <line x1="0" y1="0" x2="0" y2="310"/>
+    <line x1="0" y1="0" x2="-268" y2="155"/>
+    <line x1="0" y1="0" x2="-268" y2="-155"/>
+    <line x1="0" y1="0" x2="155" y2="-268"/>
+    <line x1="0" y1="0" x2="155" y2="268"/>
+    <line x1="0" y1="0" x2="-155" y2="-268"/>
+    <line x1="0" y1="0" x2="-155" y2="268"/>
+    <line x1="0" y1="0" x2="310" y2="0"/>
+    <line x1="0" y1="0" x2="-310" y2="0"/>
   </g>
 
-  <!-- Center glow -->
-  <circle cx="600" cy="280" r="200" fill="url(#glow)" filter="url(#bigGlow)"/>
+  <!-- Spider body glow aura -->
+  <circle cx="600" cy="260" r="60" fill="#00e5ff" opacity="0.08" filter="url(#blur30)"/>
+  <circle cx="600" cy="260" r="30" fill="#7b2fff" opacity="0.12" filter="url(#blur30)"/>
 
-  <!-- Spider body - central -->
-  <g transform="translate(600,280)" filter="url(#neonGlow)">
+  <!-- === SPIDER LEGS === -->
+  <g filter="url(#glow3)" stroke-linecap="round" fill="none">
+    <!-- Right legs (4) -->
+    <path d="M620,245 Q665,218 720,185 Q755,168 800,155" stroke="url(#legR)" stroke-width="2.8" opacity="0.9"/>
+    <path d="M625,258 Q680,248 740,238 Q785,232 840,238" stroke="url(#legR)" stroke-width="2.4" opacity="0.8"/>
+    <path d="M625,272 Q680,282 740,298 Q785,308 840,318" stroke="url(#legR)" stroke-width="2.4" opacity="0.8"/>
+    <path d="M620,282 Q665,305 720,345 Q755,365 800,380" stroke="url(#legR)" stroke-width="2.8" opacity="0.7"/>
+    <!-- Left legs (4) -->
+    <path d="M580,245 Q535,218 480,185 Q445,168 400,155" stroke="url(#legL)" stroke-width="2.8" opacity="0.9"/>
+    <path d="M575,258 Q520,248 460,238 Q415,232 360,238" stroke="url(#legL)" stroke-width="2.4" opacity="0.8"/>
+    <path d="M575,272 Q520,282 460,298 Q415,308 360,318" stroke="url(#legL)" stroke-width="2.4" opacity="0.8"/>
+    <path d="M580,282 Q535,305 480,345 Q445,365 400,380" stroke="url(#legL)" stroke-width="2.8" opacity="0.7"/>
+  </g>
+
+  <!-- Leg end nodes with pulse rings -->
+  <g filter="url(#glow6)">
+    <!-- Right nodes -->
+    <circle cx="800" cy="155" r="10" fill="#00e5ff" opacity="0.12"/>
+    <circle cx="800" cy="155" r="5" fill="#00e5ff"/>
+    <circle cx="840" cy="238" r="10" fill="#7b2fff" opacity="0.12"/>
+    <circle cx="840" cy="238" r="5" fill="#7b2fff"/>
+    <circle cx="840" cy="318" r="10" fill="#ff2d78" opacity="0.12"/>
+    <circle cx="840" cy="318" r="5" fill="#ff2d78"/>
+    <circle cx="800" cy="380" r="10" fill="#00ff88" opacity="0.12"/>
+    <circle cx="800" cy="380" r="5" fill="#00ff88"/>
+    <!-- Left nodes -->
+    <circle cx="400" cy="155" r="10" fill="#ffbe0b" opacity="0.12"/>
+    <circle cx="400" cy="155" r="5" fill="#ffbe0b"/>
+    <circle cx="360" cy="238" r="10" fill="#00e5ff" opacity="0.12"/>
+    <circle cx="360" cy="238" r="5" fill="#00e5ff"/>
+    <circle cx="360" cy="318" r="10" fill="#7b2fff" opacity="0.12"/>
+    <circle cx="360" cy="318" r="5" fill="#7b2fff"/>
+    <circle cx="400" cy="380" r="10" fill="#ff2d78" opacity="0.12"/>
+    <circle cx="400" cy="380" r="5" fill="#ff2d78"/>
+  </g>
+
+  <!-- Framework labels with icons -->
+  <g font-family="'Segoe UI',Arial,sans-serif" font-size="11" font-weight="600" letter-spacing="1">
+    <text x="815" y="159" fill="#00e5ff" opacity="0.7">GO</text>
+    <text x="855" y="242" fill="#7b2fff" opacity="0.7">PYTHON</text>
+    <text x="855" y="322" fill="#ff2d78" opacity="0.7">JAVA</text>
+    <text x="815" y="384" fill="#00ff88" opacity="0.7">RUST</text>
+    <text x="385" y="159" fill="#ffbe0b" opacity="0.7" text-anchor="end">AI / LLM</text>
+    <text x="345" y="242" fill="#00e5ff" opacity="0.7" text-anchor="end">WASM</text>
+    <text x="345" y="322" fill="#7b2fff" opacity="0.7" text-anchor="end">BROWSER</text>
+    <text x="385" y="384" fill="#ff2d78" opacity="0.7" text-anchor="end">REVERSE</text>
+  </g>
+
+  <!-- === SPIDER BODY === -->
+  <g transform="translate(600,260)" filter="url(#glow12)">
     <!-- Abdomen -->
-    <ellipse cx="0" cy="20" rx="28" ry="35" fill="url(#spiderBody)" opacity="0.9"/>
+    <ellipse cx="0" cy="22" rx="30" ry="38" fill="url(#bodyGrad)" opacity="0.92"/>
     <!-- Cephalothorax -->
-    <ellipse cx="0" cy="-18" rx="22" ry="20" fill="url(#spiderBody)" opacity="0.95"/>
+    <ellipse cx="0" cy="-18" rx="24" ry="22" fill="url(#bodyGrad)" opacity="0.96"/>
+    <!-- Body circuit pattern -->
+    <line x1="-12" y1="-4" x2="12" y2="-4" stroke="#fff" stroke-width="0.7" opacity="0.4"/>
+    <line x1="0" y1="-16" x2="0" y2="18" stroke="#fff" stroke-width="0.7" opacity="0.4"/>
+    <line x1="-16" y1="12" x2="16" y2="12" stroke="#fff" stroke-width="0.5" opacity="0.3"/>
+    <line x1="-8" y1="28" x2="8" y2="28" stroke="#fff" stroke-width="0.5" opacity="0.25"/>
+    <!-- Circuit nodes -->
+    <circle cx="-12" cy="-4" r="2.2" fill="#00e5ff" opacity="0.8"/>
+    <circle cx="12" cy="-4" r="2.2" fill="#00e5ff" opacity="0.8"/>
+    <circle cx="0" cy="18" r="2.2" fill="#ff2d78" opacity="0.8"/>
+    <circle cx="0" cy="-16" r="2.2" fill="#7b2fff" opacity="0.8"/>
+    <circle cx="-8" cy="28" r="1.5" fill="#ffbe0b" opacity="0.5"/>
+    <circle cx="8" cy="28" r="1.5" fill="#ffbe0b" opacity="0.5"/>
     <!-- Eyes -->
-    <circle cx="-8" cy="-25" r="4" fill="#00f5ff"/>
-    <circle cx="8" cy="-25" r="4" fill="#00f5ff"/>
-    <circle cx="-8" cy="-25" r="2" fill="#fff"/>
-    <circle cx="8" cy="-25" r="2" fill="#fff"/>
-    <!-- Circuit pattern on body -->
-    <line x1="-10" y1="-5" x2="10" y2="-5" stroke="#fff" stroke-width="0.8" opacity="0.6"/>
-    <line x1="0" y1="-15" x2="0" y2="15" stroke="#fff" stroke-width="0.8" opacity="0.6"/>
-    <line x1="-15" y1="10" x2="15" y2="10" stroke="#fff" stroke-width="0.8" opacity="0.4"/>
-    <circle cx="-10" cy="-5" r="2" fill="#00f5ff" opacity="0.8"/>
-    <circle cx="10" cy="-5" r="2" fill="#00f5ff" opacity="0.8"/>
-    <circle cx="0" cy="15" r="2" fill="#ff006e" opacity="0.8"/>
-    <circle cx="0" cy="-15" r="2" fill="#7b2fff" opacity="0.8"/>
+    <circle cx="-9" cy="-26" r="5" fill="#00e5ff" opacity="0.3"/>
+    <circle cx="9" cy="-26" r="5" fill="#00e5ff" opacity="0.3"/>
+    <circle cx="-9" cy="-26" r="3.5" fill="#00e5ff"/>
+    <circle cx="9" cy="-26" r="3.5" fill="#00e5ff"/>
+    <circle cx="-9" cy="-26" r="1.8" fill="#fff"/>
+    <circle cx="9" cy="-26" r="1.8" fill="#fff"/>
   </g>
 
-  <!-- Spider legs - 8 legs, 4 per side -->
-  <g filter="url(#neonGlow)" stroke-width="2.5" fill="none" stroke-linecap="round">
-    <!-- Right legs -->
-    <path d="M618,265 Q660,240 710,200 Q740,180 780,170" stroke="url(#legGrad)" opacity="0.9"/>
-    <path d="M622,275 Q670,265 730,250 Q770,240 820,245" stroke="url(#legGrad)" opacity="0.85"/>
-    <path d="M622,290 Q670,300 730,315 Q770,325 820,335" stroke="url(#legGrad)" opacity="0.8"/>
-    <path d="M618,300 Q660,320 710,360 Q740,385 780,400" stroke="url(#legGrad)" opacity="0.75"/>
-    <!-- Left legs -->
-    <path d="M582,265 Q540,240 490,200 Q460,180 420,170" stroke="url(#legGradR)" opacity="0.9"/>
-    <path d="M578,275 Q530,265 470,250 Q430,240 380,245" stroke="url(#legGradR)" opacity="0.85"/>
-    <path d="M578,290 Q530,300 470,315 Q430,325 380,335" stroke="url(#legGradR)" opacity="0.8"/>
-    <path d="M582,300 Q540,320 490,360 Q460,385 420,400" stroke="url(#legGradR)" opacity="0.75"/>
-  </g>
+  <!-- === TITLE AREA === -->
+  <!-- Top decorative line -->
+  <line x1="380" y1="462" x2="820" y2="462" stroke="url(#bodyGrad)" stroke-width="1" opacity="0.3"/>
 
-  <!-- Leg endpoint nodes (framework labels) -->
-  <g filter="url(#softGlow)">
-    <!-- Right side nodes -->
-    <circle cx="780" cy="170" r="6" fill="#00d4ff"/>
-    <circle cx="820" cy="245" r="6" fill="#7b2fff"/>
-    <circle cx="820" cy="335" r="6" fill="#ff006e"/>
-    <circle cx="780" cy="400" r="6" fill="#00ff88"/>
-    <!-- Left side nodes -->
-    <circle cx="420" cy="170" r="6" fill="#ffbe0b"/>
-    <circle cx="380" cy="245" r="6" fill="#00d4ff"/>
-    <circle cx="380" cy="335" r="6" fill="#7b2fff"/>
-    <circle cx="420" cy="400" r="6" fill="#ff006e"/>
-  </g>
-
-  <!-- Framework labels -->
-  <g font-family="monospace" font-size="13" fill="#00f5ff" opacity="0.7">
-    <text x="795" y="174">GO</text>
-    <text x="835" y="249">PYTHON</text>
-    <text x="835" y="339">JAVA</text>
-    <text x="795" y="404">RUST</text>
-    <text x="370" y="174" text-anchor="end">AI/LLM</text>
-    <text x="330" y="249" text-anchor="end">WASM</text>
-    <text x="330" y="339" text-anchor="end">BROWSER</text>
-    <text x="370" y="404" text-anchor="end">REVERSE</text>
-  </g>
-
-  <!-- Title -->
-  <text x="600" y="510" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="52" font-weight="bold" fill="#ffffff" filter="url(#softGlow)">
+  <text x="600" y="500" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="48" font-weight="bold" fill="url(#titleGrad)" filter="url(#glow6)">
     Mond Spider Agent
   </text>
-  <text x="600" y="545" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="18" fill="#00f5ff" letter-spacing="6" opacity="0.8">
+  <text x="600" y="532" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="16" fill="#00e5ff" letter-spacing="8" opacity="0.85" font-weight="600">
     v6.1 REVERSE STRONGEST
   </text>
-  <text x="600" y="575" text-anchor="middle" font-family="monospace" font-size="12" fill="#7b8fa8" letter-spacing="2" opacity="0.6">
+
+  <!-- Bottom decorative line -->
+  <line x1="420" y1="548" x2="780" y2="548" stroke="url(#bodyGrad)" stroke-width="0.6" opacity="0.2"/>
+
+  <text x="600" y="572" text-anchor="middle" font-family="'Courier New',monospace" font-size="11" fill="#5a7a9a" letter-spacing="3" opacity="0.6">
     MULTI-RUNTIME AI CRAWLER  ·  JS REVERSE ENGINEERING  ·  4 NATIVE FRAMEWORKS
   </text>
 
-  <!-- Version badge -->
-  <g transform="translate(1050,30)">
-    <rect x="0" y="0" width="120" height="32" rx="16" fill="#00f5ff" opacity="0.15"/>
-    <rect x="0" y="0" width="120" height="32" rx="16" fill="none" stroke="#00f5ff" stroke-width="1" opacity="0.4"/>
-    <text x="60" y="21" text-anchor="middle" font-family="monospace" font-size="12" fill="#00f5ff" font-weight="bold">v6.1 LATEST</text>
+  <!-- WeChat contact -->
+  <g transform="translate(600,600)" opacity="0.5">
+    <rect x="-85" y="-14" width="170" height="24" rx="12" fill="#00e5ff" opacity="0.08"/>
+    <rect x="-85" y="-14" width="170" height="24" rx="12" fill="none" stroke="#00e5ff" stroke-width="0.6" opacity="0.2"/>
+    <text x="0" y="4" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="#00e5ff" letter-spacing="1">
+      WeChat: 3314844
+    </text>
   </g>
 
-  <!-- Floating particles -->
-  <g fill="#00f5ff" opacity="0.3">
-    <circle cx="100" cy="80" r="1.5"/>
-    <circle cx="250" cy="150" r="1"/>
-    <circle cx="950" cy="100" r="1.5"/>
-    <circle cx="1100" cy="200" r="1"/>
-    <circle cx="150" cy="450" r="1"/>
-    <circle cx="1050" cy="480" r="1.5"/>
-    <circle cx="300" cy="550" r="1"/>
-    <circle cx="900" cy="560" r="1"/>
-    <circle cx="50" cy="300" r="1.5"/>
-    <circle cx="1150" cy="350" r="1"/>
+  <!-- Version badge top-right -->
+  <g transform="translate(1060,25)">
+    <rect x="0" y="0" width="110" height="30" rx="15" fill="#00e5ff" opacity="0.1"/>
+    <rect x="0" y="0" width="110" height="30" rx="15" fill="none" stroke="#00e5ff" stroke-width="0.8" opacity="0.3"/>
+    <text x="55" y="20" text-anchor="middle" font-family="monospace" font-size="11" fill="#00e5ff" font-weight="bold">v6.1 LATEST</text>
   </g>
-  <g fill="#7b2fff" opacity="0.25">
-    <circle cx="180" cy="120" r="1"/>
-    <circle cx="1000" cy="150" r="1.5"/>
-    <circle cx="80" cy="500" r="1"/>
-    <circle cx="1120" cy="420" r="1.5"/>
+
+  <!-- Floating particles — multi-color -->
+  <g opacity="0.4">
+    <circle cx="85" cy="65" r="1.2" fill="#00e5ff"/>
+    <circle cx="210" cy="130" r="0.8" fill="#7b2fff"/>
+    <circle cx="960" cy="75" r="1.4" fill="#00e5ff"/>
+    <circle cx="1110" cy="175" r="0.8" fill="#ff2d78"/>
+    <circle cx="130" cy="430" r="0.9" fill="#7b2fff"/>
+    <circle cx="1060" cy="450" r="1.2" fill="#00e5ff"/>
+    <circle cx="280" cy="520" r="0.7" fill="#ffbe0b"/>
+    <circle cx="920" cy="540" r="0.9" fill="#ff2d78"/>
+    <circle cx="45" cy="280" r="1.3" fill="#00ff88"/>
+    <circle cx="1155" cy="330" r="0.8" fill="#00e5ff"/>
+    <circle cx="170" cy="180" r="0.6" fill="#ffbe0b"/>
+    <circle cx="1020" cy="120" r="1.0" fill="#7b2fff"/>
+    <circle cx="65" cy="490" r="0.7" fill="#00e5ff"/>
+    <circle cx="1130" cy="400" r="1.1" fill="#ff2d78"/>
+    <circle cx="310" cy="70" r="0.8" fill="#00ff88"/>
+    <circle cx="890" cy="55" r="0.6" fill="#00e5ff"/>
+    <circle cx="180" cy="570" r="1.0" fill="#7b2fff"/>
+    <circle cx="1020" cy="510" r="0.7" fill="#ffbe0b"/>
   </g>
-  <g fill="#ff006e" opacity="0.2">
-    <circle cx="320" cy="90" r="1"/>
-    <circle cx="880" cy="80" r="1"/>
-    <circle cx="200" cy="520" r="1.5"/>
-    <circle cx="1000" cy="530" r="1"/>
+
+  <!-- Faint connecting lines between particles -->
+  <g stroke="#00e5ff" stroke-width="0.3" opacity="0.06">
+    <line x1="85" y1="65" x2="210" y2="130"/>
+    <line x1="960" y1="75" x2="1110" y2="175"/>
+    <line x1="1020" y1="120" x2="960" y2="75"/>
+    <line x1="130" y1="430" x2="65" y2="490"/>
+    <line x1="1060" y1="450" x2="1130" y2="400"/>
+  </g>
   </g>
 </svg>

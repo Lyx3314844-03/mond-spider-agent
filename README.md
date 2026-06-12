@@ -9,6 +9,11 @@
   <img src="https://img.shields.io/badge/JS%20Reverse-8%20AST%20Passes-00ff88?style=for-the-badge" alt="JS Reverse">
   <img src="https://img.shields.io/badge/Benchmark-23%2F23%20Passed-ffbe0b?style=for-the-badge" alt="Benchmark">
   <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License">
+  <img src="https://img.shields.io/badge/WeChat-3314844-07C160?style=for-the-badge&logo=wechat&logoColor=white" alt="WeChat">
+</p>
+
+<p align="center">
+  <b>Contact / 联系方式</b>: WeChat <code>3314844</code>
 </p>
 
 ---
@@ -403,6 +408,25 @@ spider/
 | v5.0 | Deep Hermes | Planner, Critic, RepairAgent, MondAgent API |
 | v6.0 | Deep Evolution | WorldModel, CuriosityEngine, TransferLearning, FreeCodeSynthesis, DeepMetacognition, AutonomousGoalSetter |
 | **v6.1** | **Reverse Strongest** | **ASTDeobfuscator (8 passes), HookEngine (7 categories), SignatureTracer, WasmReverse, ReverseOrchestrator** |
+
+---
+
+## Contact / 联系方式
+
+<p align="center">
+  <img src="https://img.shields.io/badge/WeChat-3314844-07C160?style=for-the-badge&logo=wechat&logoColor=white" alt="WeChat">
+  <img src="https://img.shields.io/badge/GitHub-Lyx3314844--03-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+</p>
+
+<table align="center">
+<tr>
+<td align="center">
+
+**微信 WeChat**: `3314844`
+
+</td>
+</tr>
+</table>
 
 ---
 
