@@ -59,6 +59,75 @@ A **self-evolving AI crawler platform** that orchestrates **4 native frameworks*
 
 ---
 
+## What Can It Crawl?
+
+### By Target Type
+
+| Target | Examples | How It Handles |
+|--------|----------|---------------|
+| **Static HTML** | Blogs, news sites, documentation | GoSpider / RustSpider direct fetch, highest throughput |
+| **Dynamic SPA** | React / Vue / Angular single-page apps | Playwright headless rendering, auto-wait for hydration |
+| **Anti-Bot Protected** | Cloudflare, Akamai, DataDome, PerimeterX, GeeTest | CloakBrowser stealth + fingerprint rotation + auto-evasion |
+| **Encrypted API** | Sites with X-Sign / X-Bogus / X-Gorgon / token params | SignatureTracer taint analysis → auto Python replay |
+| **JS Obfuscated** | obfuscator.io, sojson, jsjiami, packer | 8 Babel AST passes → readable code → extract logic |
+| **WASM Protected** | Sites using WebAssembly for crypto/signatures | WasmReverse binary parser → JS wrapper gen → replay |
+| **Mobile App API** | App APIs with encrypted request signing | Hook engine captures signing logic, auto-generates replay |
+| **Rate-Limited APIs** | APIs with aggressive rate limiting | Proxy rotation + behavioral delay + distributed crawl |
+| **Login-Required** | Sites behind authentication walls | Cookie/session extraction via hook engine, token refresh |
+| **Infinite Scroll** | Social feeds, product listings | Scroll handler + dynamic content detection + pagination |
+
+### By Industry
+
+| Industry | What You Get | Key Challenge Solved |
+|----------|-------------|---------------------|
+| **Social Media** | Posts, comments, profiles, trending data | Encrypted signatures (X-Bogus, X-Sign, msToken) auto-cracked |
+| **E-Commerce** | Product listings, prices, reviews, inventory | Anti-scraping bypass + infinite scroll + dynamic rendering |
+| **Finance** | Stock data, fund info, market news | Encrypted API parameter reversal + real-time data capture |
+| **Real Estate** | Listings, pricing, property details | Dynamic map rendering + paginated content assembly |
+| **Job Platforms** | Job postings, salary data, company info | Login-required content + anti-bot evasion |
+| **Search Engines** | SERP results, suggestions, related queries | Rate limiting handling + result parsing |
+| **News & Media** | Articles, videos, trending topics | Multi-source aggregation + content deduplication |
+| **Travel & Booking** | Flights, hotels, prices, availability | Dynamic pricing capture + multi-step form navigation |
+
+### Real-World Scenarios
+
+```
+Scenario 1: "I need Douyin/TikTok video data"
+  → SignatureTracer cracks X-Bogus + msToken → auto-generates Python replay script
+  → AgenticLoop handles pagination and rate limiting
+
+Scenario 2: "I need to scrape a Cloudflare-protected e-commerce site"
+  → CloakBrowser bypasses Cloudflare challenge
+  → If blocked → ReverseOrchestrator auto-triggers JS reverse pipeline
+  → FreeCodeSynthesis generates reusable crawler module
+
+Scenario 3: "The site uses WebAssembly to encrypt all API calls"
+  → WasmReverse parses WASM binary → identifies crypto exports
+  → HookEngine captures runtime parameters → JS wrapper generated
+  → SignatureTracer traces full signing chain → Python replay module
+
+Scenario 4: "I need data from 50 similar e-commerce sites"
+  → First site: full reverse engineering + strategy discovery
+  → Remaining 49: TransferLearning auto-migrates strategies via fingerprint matching
+  → WorldModel predicts each site's anti-bot type before crawling
+
+Scenario 5: "The site changes its selectors every week"
+  → SelectorSynthesis auto-generates new CSS/XPath on failure
+  → DeepMetacognition detects the pattern → proactively re-learns selectors
+  → ExperienceStore remembers past selectors for faster recovery
+```
+
+### What It Cannot Do (Honest Boundaries)
+
+| Limitation | Reason |
+|-----------|--------|
+| CAPTCHA solving | Focuses on prevention (fingerprint/behavior) rather than solving; integrates external CAPTCHA services if needed |
+| Native mobile app binary | Reverse engineers the API layer (signatures, encryption), not the app binary itself |
+| Real-time streaming data | Designed for request-response patterns, not WebSocket streams (use specialized tools) |
+| Legally restricted content | Always respect robots.txt, ToS, and local laws |
+
+---
+
 ## Quick Start
 
 ```bash
