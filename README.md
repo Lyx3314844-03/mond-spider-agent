@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/github-banner.svg" alt="Mond Spider Agent" width="100%">
+  <img src="docs/banner.png" alt="Mond Spider Agent" width="100%">
 </p>
 
 <p align="center">
