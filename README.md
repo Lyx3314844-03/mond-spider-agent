@@ -59,72 +59,96 @@ A **self-evolving AI crawler platform** that orchestrates **4 native frameworks*
 
 ---
 
-## What Can It Crawl?
+## What Can It Crawl? — Full Target Coverage
 
-### By Target Type
+### Social Media & Content Platforms
 
-| Target | Examples | How It Handles |
-|--------|----------|---------------|
-| **Static HTML** | Blogs, news sites, documentation | GoSpider / RustSpider direct fetch, highest throughput |
-| **Dynamic SPA** | React / Vue / Angular single-page apps | Playwright headless rendering, auto-wait for hydration |
-| **Anti-Bot Protected** | Cloudflare, Akamai, DataDome, PerimeterX, GeeTest | CloakBrowser stealth + fingerprint rotation + auto-evasion |
-| **Encrypted API** | Sites with X-Sign / X-Bogus / X-Gorgon / token params | SignatureTracer taint analysis → auto Python replay |
-| **JS Obfuscated** | obfuscator.io, sojson, jsjiami, packer | 8 Babel AST passes → readable code → extract logic |
-| **WASM Protected** | Sites using WebAssembly for crypto/signatures | WasmReverse binary parser → JS wrapper gen → replay |
-| **Mobile App API** | App APIs with encrypted request signing | Hook engine captures signing logic, auto-generates replay |
-| **Rate-Limited APIs** | APIs with aggressive rate limiting | Proxy rotation + behavioral delay + distributed crawl |
-| **Login-Required** | Sites behind authentication walls | Cookie/session extraction via hook engine, token refresh |
-| **Infinite Scroll** | Social feeds, product listings | Scroll handler + dynamic content detection + pagination |
-
-### By Industry
-
-| Industry | What You Get | Key Challenge Solved |
+| Platform | What You Get | Key Challenge Solved |
 |----------|-------------|---------------------|
-| **Social Media** | Posts, comments, profiles, trending data | Encrypted signatures (X-Bogus, X-Sign, msToken) auto-cracked |
-| **E-Commerce** | Product listings, prices, reviews, inventory | Anti-scraping bypass + infinite scroll + dynamic rendering |
-| **Finance** | Stock data, fund info, market news | Encrypted API parameter reversal + real-time data capture |
-| **Real Estate** | Listings, pricing, property details | Dynamic map rendering + paginated content assembly |
-| **Job Platforms** | Job postings, salary data, company info | Login-required content + anti-bot evasion |
-| **Search Engines** | SERP results, suggestions, related queries | Rate limiting handling + result parsing |
-| **News & Media** | Articles, videos, trending topics | Multi-source aggregation + content deduplication |
-| **Travel & Booking** | Flights, hotels, prices, availability | Dynamic pricing capture + multi-step form navigation |
+| **抖音 / TikTok** | 视频列表、评论、用户资料、直播数据 | X-Bogus / X-Khronos 签名逆向，自动回放 |
+| **小红书** | 笔记、评论、用户画像、商品数据 | 加密签名参数追踪 + WASM 模块解析 |
+| **快手** | 短视频、直播、电商数据 | X-Sign 自动追踪 + Hook 引擎拦截 |
+| **微博** | 帖子、评论、热搜、用户关系 | 反爬绕过 + 翻页自动处理 |
+| **Instagram** | 帖子、Story、Reels、评论、粉丝 | GraphQL API 签名绕过 |
+| **Twitter / X** | 推文、用户时间线、搜索结果 | API 令牌自动获取 + 速率管理 |
+| **YouTube** | 视频元数据、评论、字幕、推荐 | InnerTube API 签名绕过 |
+| **Bilibili** | 视频、弹幕、评论、UP 主数据 | Wbi 签名自动生成 |
+| **知乎** | 问答、文章、用户、热榜 | 加密 Cookie + 反爬绕过 |
+| **LinkedIn** | 职位、公司、个人资料 | 登录态管理 + 反检测浏览器 |
 
-### Real-World Scenarios
+### E-Commerce & Price Intelligence
+
+| Platform | What You Get | Key Challenge Solved |
+|----------|-------------|---------------------|
+| **淘宝 / 天猫** | 商品详情、价格、评论、店铺数据 | 签名参数 + Token 自动刷新 |
+| **京东** | 商品、价格监控、评论分析 | API 签名逆向 + 反爬绕过 |
+| **拼多多** | 商品列表、价格、销量 | 加密请求参数追踪 |
+| **Amazon** | 商品信息、价格、BSR、评论 | 反机器人检测 + 验证码绕过 |
+| **Shopee / Lazada** | 东南亚电商数据 | 多地区 API 签名适配 |
+| **Shopify 商店** | 任意 Shopify 店铺数据 | 结构化 API 自动发现 |
+| **1688 / Alibaba** | 供应商、批发价格、MOQ | 登录态 + 分页处理 |
+
+### Search Engines & Data Aggregation
+
+| Target | What You Get | Key Challenge Solved |
+|--------|-------------|---------------------|
+| **Google Search** | 搜索结果、SERP 特征、关键词排名 | 反检测 + 代理轮换 + 验证码处理 |
+| **Baidu** | 搜索结果、百科、知道 | JS 渲染 + Cookie 管理 |
+| **Bing** | 搜索结果、图片、新闻 | SPA 渲染处理 |
+| **Google Maps** | 商家信息、评论、坐标 | 大量分页 + 速率控制 |
+| **Google Scholar** | 论文、引用、作者 | 反爬 + 验证码 |
+| **App Store / Google Play** | App 排名、评论、下载量 | 结构化数据提取 |
+
+### Protected / Anti-Bot Sites
+
+| Protection System | How It's Defeated |
+|-------------------|-------------------|
+| **Cloudflare** (Challenge / Turnstile) | CloakBrowser 隐身模式 + 指纹匹配 + 行为模拟 |
+| **Akamai Bot Manager** | Hook 引擎拦截传感器数据 + 签名回放 |
+| **DataDome** | 自适应浏览器策略 + AI 指纹选择 |
+| **PerimeterX / HUMAN** | 行为模拟 + 反检测浏览器 + Cookie 生成 |
+| **GeeTest 验证码** | Hook 拦截验证参数 + WASM 分析 |
+| **reCAPTCHA v2/v3** | 行为模拟 + 分数优化 + 第三方服务对接 |
+| **hCaptcha** | 浏览器指纹 + 行为模式匹配 |
+| **自定义 WAF** | ReverseOrchestrator 自动分析 → 选择最优逆向流水线 |
+
+### Enterprise & Structured Data
+
+| Target Type | Examples | Approach |
+|------------|----------|----------|
+| **REST API** | 任意 RESTful 服务 | 自动发现端点 + 签名回放 + 速率管理 |
+| **GraphQL API** | GitHub, Shopify, Medium | Introspection 查询 + 自动字段发现 |
+| **WebSocket** | 实时数据流、聊天、股票行情 | WS 协议拦截 + Hook 捕获消息 |
+| **gRPC / Protobuf** | 微服务 API | Protobuf 消息自动推断 + 序列化/反序列化 |
+| **登录保护站点** | SaaS 后台、会员系统 | Cookie/Token 管理 + 会话保持 |
+| **分页 / 无限滚动** | 任意列表页面 | 自动翻页检测 + 滚动模拟 |
+| **文件下载** | PDF、Excel、图片、视频 | 多格式解析 + 流式下载 |
+| **暗网 / .onion** | Tor 隐藏服务 | SOCKS5 代理 + Tor 网络集成 |
+
+### Specific Data Types You Can Extract
 
 ```
-Scenario 1: "I need Douyin/TikTok video data"
-  → SignatureTracer cracks X-Bogus + msToken → auto-generates Python replay script
-  → AgenticLoop handles pagination and rate limiting
-
-Scenario 2: "I need to scrape a Cloudflare-protected e-commerce site"
-  → CloakBrowser bypasses Cloudflare challenge
-  → If blocked → ReverseOrchestrator auto-triggers JS reverse pipeline
-  → FreeCodeSynthesis generates reusable crawler module
-
-Scenario 3: "The site uses WebAssembly to encrypt all API calls"
-  → WasmReverse parses WASM binary → identifies crypto exports
-  → HookEngine captures runtime parameters → JS wrapper generated
-  → SignatureTracer traces full signing chain → Python replay module
-
-Scenario 4: "I need data from 50 similar e-commerce sites"
-  → First site: full reverse engineering + strategy discovery
-  → Remaining 49: TransferLearning auto-migrates strategies via fingerprint matching
-  → WorldModel predicts each site's anti-bot type before crawling
-
-Scenario 5: "The site changes its selectors every week"
-  → SelectorSynthesis auto-generates new CSS/XPath on failure
-  → DeepMetacognition detects the pattern → proactively re-learns selectors
-  → ExperienceStore remembers past selectors for faster recovery
+文本数据        结构化数据        多媒体          元数据
+─────────      ──────────      ──────         ──────
+文章/新闻       表格/列表         图片URL          SEO 指标
+评论/帖子       价格/库存         视频/音频流       页面性能
+用户资料        排名/评分         文件/文档         API 端点
+搜索结果        时间序列          直播流           站点地图
+翻译内容        关系图谱          截图/快照         技术栈指纹
 ```
 
-### What It Cannot Do (Honest Boundaries)
+### Real-World Use Cases
 
-| Limitation | Reason |
-|-----------|--------|
-| CAPTCHA solving | Focuses on prevention (fingerprint/behavior) rather than solving; integrates external CAPTCHA services if needed |
-| Native mobile app binary | Reverse engineers the API layer (signatures, encryption), not the app binary itself |
-| Real-time streaming data | Designed for request-response patterns, not WebSocket streams (use specialized tools) |
-| Legally restricted content | Always respect robots.txt, ToS, and local laws |
+| Use Case | How Mond Spider Agent Helps |
+|----------|---------------------------|
+| **竞品价格监控** | 定时爬取电商平台价格变动，自动绕过反爬，价格异常告警 |
+| **舆情分析** | 多平台社交媒体数据采集，评论情感分析，热点追踪 |
+| **SEO 排名追踪** | 批量 Google/Bing 搜索结果采集，关键词排名变化监控 |
+| **数据标注/AI 训练** | 大规模结构化数据提取，自动清洗，格式标准化输出 |
+| **市场研究** | 跨平台商品/服务数据采集，趋势分析，竞品功能对比 |
+| **学术研究** | 论文/引用数据采集，学术社交网络分析 |
+| **安全审计** | API 签名强度评估，反爬策略有效性测试 |
+| **内容聚合** | 多源内容采集、去重、结构化输出到数据库或 API |
 
 ---
 
