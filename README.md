@@ -397,20 +397,6 @@ spider/
 
 ---
 
-## Version History
-
-| Version | Codename | Key Additions |
-|---------|----------|---------------|
-| v1.0 | Foundation | Basic Go/Python/Java/Rust crawlers |
-| v2.0 | Hermes | AgenticLoop, KnowledgeGraph, SmartCache |
-| v3.0 | Evolution | StrategyEvolution, AntiDetection, SelectorSynthesis |
-| v4.0 | Swarm | MultiAgentCoordinator, ExperienceStore |
-| v5.0 | Deep Hermes | Planner, Critic, RepairAgent, MondAgent API |
-| v6.0 | Deep Evolution | WorldModel, CuriosityEngine, TransferLearning, FreeCodeSynthesis, DeepMetacognition, AutonomousGoalSetter |
-| **v6.1** | **Reverse Strongest** | **ASTDeobfuscator (8 passes), HookEngine (7 categories), SignatureTracer, WasmReverse, ReverseOrchestrator** |
-
----
-
 ## Contact / 联系方式
 
 <p align="center">
