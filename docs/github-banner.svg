@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="100%" style="stop-color:#020810"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#00f5ff;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#00f5ff;stop-opacity:0"/>
+    </radialGradient>
+    <linearGradient id="spiderBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff"/>
+      <stop offset="50%" style="stop-color:#7b2fff"/>
+      <stop offset="100%" style="stop-color:#ff006e"/>
+    </linearGradient>
+    <linearGradient id="legGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00f5ff"/>
+      <stop offset="100%" style="stop-color:#00f5ff;stop-opacity:0.2"/>
+    </linearGradient>
+    <linearGradient id="legGradR" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#00f5ff"/>
+      <stop offset="100%" style="stop-color:#00f5ff;stop-opacity:0.2"/>
+    </linearGradient>
+    <filter id="neonGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="bigGlow">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Grid lines -->
+  <g opacity="0.08" stroke="#00f5ff">
+    <line x1="0" y1="105" x2="1200" y2="105"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+
+  <!-- Hexagonal web pattern behind spider -->
+  <g transform="translate(600,280)" opacity="0.12" stroke="#00f5ff" fill="none" stroke-width="1">
+    <polygon points="0,-120 104,-60 104,60 0,120 -104,60 -104,-60"/>
+    <polygon points="0,-180 156,-90 156,90 0,180 -156,90 -156,-90"/>
+    <polygon points="0,-240 208,-120 208,120 0,240 -208,120 -208,-120"/>
+  </g>
+
+  <!-- Radial web lines -->
+  <g transform="translate(600,280)" opacity="0.15" stroke="#00f5ff" stroke-width="0.8">
+    <line x1="0" y1="0" x2="0" y2="-300"/>
+    <line x1="0" y1="0" x2="260" y2="-150"/>
+    <line x1="0" y1="0" x2="260" y2="150"/>
+    <line x1="0" y1="0" x2="0" y2="300"/>
+    <line x1="0" y1="0" x2="-260" y2="150"/>
+    <line x1="0" y1="0" x2="-260" y2="-150"/>
+    <line x1="0" y1="0" x2="150" y2="-260"/>
+    <line x1="0" y1="0" x2="150" y2="260"/>
+    <line x1="0" y1="0" x2="-150" y2="-260"/>
+    <line x1="0" y1="0" x2="-150" y2="260"/>
+    <line x1="0" y1="0" x2="300" y2="0"/>
+    <line x1="0" y1="0" x2="-300" y2="0"/>
+  </g>
+
+  <!-- Center glow -->
+  <circle cx="600" cy="280" r="200" fill="url(#glow)" filter="url(#bigGlow)"/>
+
+  <!-- Spider body - central -->
+  <g transform="translate(600,280)" filter="url(#neonGlow)">
+    <!-- Abdomen -->
+    <ellipse cx="0" cy="20" rx="28" ry="35" fill="url(#spiderBody)" opacity="0.9"/>
+    <!-- Cephalothorax -->
+    <ellipse cx="0" cy="-18" rx="22" ry="20" fill="url(#spiderBody)" opacity="0.95"/>
+    <!-- Eyes -->
+    <circle cx="-8" cy="-25" r="4" fill="#00f5ff"/>
+    <circle cx="8" cy="-25" r="4" fill="#00f5ff"/>
+    <circle cx="-8" cy="-25" r="2" fill="#fff"/>
+    <circle cx="8" cy="-25" r="2" fill="#fff"/>
+    <!-- Circuit pattern on body -->
+    <line x1="-10" y1="-5" x2="10" y2="-5" stroke="#fff" stroke-width="0.8" opacity="0.6"/>
+    <line x1="0" y1="-15" x2="0" y2="15" stroke="#fff" stroke-width="0.8" opacity="0.6"/>
+    <line x1="-15" y1="10" x2="15" y2="10" stroke="#fff" stroke-width="0.8" opacity="0.4"/>
+    <circle cx="-10" cy="-5" r="2" fill="#00f5ff" opacity="0.8"/>
+    <circle cx="10" cy="-5" r="2" fill="#00f5ff" opacity="0.8"/>
+    <circle cx="0" cy="15" r="2" fill="#ff006e" opacity="0.8"/>
+    <circle cx="0" cy="-15" r="2" fill="#7b2fff" opacity="0.8"/>
+  </g>
+
+  <!-- Spider legs - 8 legs, 4 per side -->
+  <g filter="url(#neonGlow)" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <!-- Right legs -->
+    <path d="M618,265 Q660,240 710,200 Q740,180 780,170" stroke="url(#legGrad)" opacity="0.9"/>
+    <path d="M622,275 Q670,265 730,250 Q770,240 820,245" stroke="url(#legGrad)" opacity="0.85"/>
+    <path d="M622,290 Q670,300 730,315 Q770,325 820,335" stroke="url(#legGrad)" opacity="0.8"/>
+    <path d="M618,300 Q660,320 710,360 Q740,385 780,400" stroke="url(#legGrad)" opacity="0.75"/>
+    <!-- Left legs -->
+    <path d="M582,265 Q540,240 490,200 Q460,180 420,170" stroke="url(#legGradR)" opacity="0.9"/>
+    <path d="M578,275 Q530,265 470,250 Q430,240 380,245" stroke="url(#legGradR)" opacity="0.85"/>
+    <path d="M578,290 Q530,300 470,315 Q430,325 380,335" stroke="url(#legGradR)" opacity="0.8"/>
+    <path d="M582,300 Q540,320 490,360 Q460,385 420,400" stroke="url(#legGradR)" opacity="0.75"/>
+  </g>
+
+  <!-- Leg endpoint nodes (framework labels) -->
+  <g filter="url(#softGlow)">
+    <!-- Right side nodes -->
+    <circle cx="780" cy="170" r="6" fill="#00d4ff"/>
+    <circle cx="820" cy="245" r="6" fill="#7b2fff"/>
+    <circle cx="820" cy="335" r="6" fill="#ff006e"/>
+    <circle cx="780" cy="400" r="6" fill="#00ff88"/>
+    <!-- Left side nodes -->
+    <circle cx="420" cy="170" r="6" fill="#ffbe0b"/>
+    <circle cx="380" cy="245" r="6" fill="#00d4ff"/>
+    <circle cx="380" cy="335" r="6" fill="#7b2fff"/>
+    <circle cx="420" cy="400" r="6" fill="#ff006e"/>
+  </g>
+
+  <!-- Framework labels -->
+  <g font-family="monospace" font-size="13" fill="#00f5ff" opacity="0.7">
+    <text x="795" y="174">GO</text>
+    <text x="835" y="249">PYTHON</text>
+    <text x="835" y="339">JAVA</text>
+    <text x="795" y="404">RUST</text>
+    <text x="370" y="174" text-anchor="end">AI/LLM</text>
+    <text x="330" y="249" text-anchor="end">WASM</text>
+    <text x="330" y="339" text-anchor="end">BROWSER</text>
+    <text x="370" y="404" text-anchor="end">REVERSE</text>
+  </g>
+
+  <!-- Title -->
+  <text x="600" y="510" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="52" font-weight="bold" fill="#ffffff" filter="url(#softGlow)">
+    Mond Spider Agent
+  </text>
+  <text x="600" y="545" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="18" fill="#00f5ff" letter-spacing="6" opacity="0.8">
+    v6.1 REVERSE STRONGEST
+  </text>
+  <text x="600" y="575" text-anchor="middle" font-family="monospace" font-size="12" fill="#7b8fa8" letter-spacing="2" opacity="0.6">
+    MULTI-RUNTIME AI CRAWLER  ·  JS REVERSE ENGINEERING  ·  4 NATIVE FRAMEWORKS
+  </text>
+
+  <!-- Version badge -->
+  <g transform="translate(1050,30)">
+    <rect x="0" y="0" width="120" height="32" rx="16" fill="#00f5ff" opacity="0.15"/>
+    <rect x="0" y="0" width="120" height="32" rx="16" fill="none" stroke="#00f5ff" stroke-width="1" opacity="0.4"/>
+    <text x="60" y="21" text-anchor="middle" font-family="monospace" font-size="12" fill="#00f5ff" font-weight="bold">v6.1 LATEST</text>
+  </g>
+
+  <!-- Floating particles -->
+  <g fill="#00f5ff" opacity="0.3">
+    <circle cx="100" cy="80" r="1.5"/>
+    <circle cx="250" cy="150" r="1"/>
+    <circle cx="950" cy="100" r="1.5"/>
+    <circle cx="1100" cy="200" r="1"/>
+    <circle cx="150" cy="450" r="1"/>
+    <circle cx="1050" cy="480" r="1.5"/>
+    <circle cx="300" cy="550" r="1"/>
+    <circle cx="900" cy="560" r="1"/>
+    <circle cx="50" cy="300" r="1.5"/>
+    <circle cx="1150" cy="350" r="1"/>
+  </g>
+  <g fill="#7b2fff" opacity="0.25">
+    <circle cx="180" cy="120" r="1"/>
+    <circle cx="1000" cy="150" r="1.5"/>
+    <circle cx="80" cy="500" r="1"/>
+    <circle cx="1120" cy="420" r="1.5"/>
+  </g>
+  <g fill="#ff006e" opacity="0.2">
+    <circle cx="320" cy="90" r="1"/>
+    <circle cx="880" cy="80" r="1"/>
+    <circle cx="200" cy="520" r="1.5"/>
+    <circle cx="1000" cy="530" r="1"/>
+  </g>
+</svg>

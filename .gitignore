@@ -1,0 +1,16 @@
+# Docs-only repo — no source code
+*.py
+*.go
+*.java
+*.rs
+*.js
+*.ts
+*.jar
+*.exe
+node_modules/
+__pycache__/
+target/
+build/
+dist/
+.gocache/
+.cargo/
